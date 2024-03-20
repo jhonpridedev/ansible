@@ -17,7 +17,7 @@ pipeline {
                 sh 'whoami'
 
                 sh 'ansible --version'
-
+                
                 sshagent (credentials: ['debian-private-key']) {
                     
                     sh 'ansible server1 -i hosts -a "cat /etc/os-release" -u admin'
