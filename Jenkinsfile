@@ -19,13 +19,16 @@ pipeline {
 
                 sh 'ansible --version'
 
-                sshagent (credentials: ['debian-private-key']) {
+                // sshagent (credentials: ['debian-private-key']) {
                     
-                sh 'ansible server1 -i hosts -a "cat /etc/os-release" -u admin'
-                }
+                // sh 'ansible server1 -i hosts -a "cat /etc/os-release" -u admin'
+                // }
 
                 // sh 'ansible server1 -m command -a "cat /etc/os-release" -u admin'
                 
+                sshagent(credentials: ['debian-private-key']) {
+                    sh 'ansible server1 -i hosts -a "cat /etc/os-release" -u admin'
+                }
             }
         }
     }
