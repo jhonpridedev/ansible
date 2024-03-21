@@ -3,7 +3,7 @@
   become: true
   remote_user: admin
   tasks:
-  - name: Install java 17
+  - name: Install java 11
     apt:
-      name: java-17-openjdk
+      name: java-11-openjdk
       state: latest
