@@ -20,6 +20,8 @@ pipeline {
                 
                 sshagent(credentials: ['debian-private-key']) {
                     sh 'ansible server1 -i hosts -a "cat /etc/os-release" -u admin'
+
+                    sh 'ansible-playbook -i hosts playbooks/server1_config.yml'
                 }
             }
         }
