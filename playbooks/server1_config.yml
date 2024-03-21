@@ -5,5 +5,5 @@
   tasks:
   - name: Install java 11
     apt:
-      name: java-11-openjdk
-      state: latest
+      name: openjdk-11-jdk
+      state: present
